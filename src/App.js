@@ -38,7 +38,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className="todo-number">
+        {todos.length} tareas
+      </div>
+
       <div className="todo-list">
+      
         {todos.map((todo, index) => (
           <Todo 
             key={index}
