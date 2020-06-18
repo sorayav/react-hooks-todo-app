@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
-import Todo from './Todo';
-import TodoForm from './TodoForm';
+import './styles/App.css';
+import Todo from './components/Todo';
+import TodoForm from './components/TodoForm';
 
 function App() {
   const [todos, setTodos] = useState([
