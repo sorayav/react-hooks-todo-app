@@ -14,7 +14,7 @@ function App() {
       isComplete: false
     },
     { 
-      text: "Build really cool todo app",
+      text: "Build really cool to-do app",
       isComplete: false
      }
   ]);
@@ -27,6 +27,7 @@ function App() {
   const completeTodo = index => {
     const newTodos = [...todos];
     newTodos[index].isComplete = true;
+    // newTodos.splice(index, 1);
     setTodos(newTodos);
   }
 
@@ -38,8 +39,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="todo-number">
-        {todos.length} tareas
+      <div className={`todo-counter ${todos.isComplete === true ? "green" : ""}`}>
+        <span className="todo-counter__number">{todos.length}</span> tareas
       </div>
 
       <div className="todo-list">
