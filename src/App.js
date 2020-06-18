@@ -31,7 +31,9 @@ function App() {
   }
 
   const removeTodo = index => {
-    const newTodos = [...todos]
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   }
 
   return (
@@ -43,6 +45,7 @@ function App() {
             index={index}
             todo={todo}
             completeTodo={completeTodo}
+            removeTodo={removeTodo}
             />
         ))}
 
