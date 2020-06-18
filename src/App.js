@@ -39,12 +39,13 @@ function App() {
 
   return (
     <div className="App">
+      {/* <div className="todo-app"> */}
+      <div className="todo-gradient">
       <div className={`todo-counter ${todos.isComplete === true ? "green" : ""}`}>
         <span className="todo-counter__number">{todos.length}</span> tareas
       </div>
-
+      </div>
       <div className="todo-list">
-      
         {todos.map((todo, index) => (
           <Todo 
             key={index}
@@ -54,11 +55,11 @@ function App() {
             removeTodo={removeTodo}
             />
         ))}
-
-        <TodoForm 
+      </div>
+      {/* </div> */}
+      <TodoForm 
           addTodo={addTodo}
         />
-      </div>
     </div>
   );
 }
