@@ -27,8 +27,15 @@ function App() {
   const completeTodo = index => {
     const newTodos = [...todos];
     newTodos[index].isComplete = true;
-    // newTodos.splice(index, 1);
+      // setTimeout((index) => {
+      //   newTodos.splice(index, 1);
+      // }, 1500);
     setTodos(newTodos);
+    const gradient = document.querySelector('.todo-gradient');
+    gradient.classList.add('rotate');
+    setTimeout(() => {
+      gradient.classList.remove('rotate');
+    }, 1000);
   }
 
   const removeTodo = index => {
@@ -40,8 +47,8 @@ function App() {
   return (
     <div className="App">
       {/* <div className="todo-app"> */}
-      <div className="todo-gradient">
-      <div className={`todo-counter ${todos.isComplete === true ? "green" : ""}`}>
+      <div className={`todo-gradient ${todos.isComplete ? "rotate" : ""}`}>
+      <div className={`todo-counter`}>
         <span className="todo-counter__number">{todos.length}</span> tareas
       </div>
       </div>
