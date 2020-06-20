@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './styles/App.css';
 import Todo from './components/Todo';
 import TodoForm from './components/TodoForm';
@@ -44,12 +44,20 @@ function App() {
     setTodos(newTodos);
   }
 
+  const todosEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    todosEndRef.current.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(scrollToBottom, [todos]);
+
   return (
     <div className="App">
       {/* <div className="todo-app"> */}
       <div className={`todo-gradient ${todos.isComplete ? "rotate" : ""}`}>
       <div className={`todo-counter`}>
-        <span className="todo-counter__number">{todos.length}</span> tareas
+        <span className="todo-counter__number">{todos.length}</span> tasks
       </div>
       </div>
       <div className="todo-list">
@@ -62,6 +70,7 @@ function App() {
             removeTodo={removeTodo}
             />
         ))}
+        <div ref={todosEndRef} />
       </div>
       {/* </div> */}
       <TodoForm 
