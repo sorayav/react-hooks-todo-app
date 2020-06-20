@@ -88,40 +88,53 @@ body {
 }
 
 form {
-  position: fixed;
-  bottom: 0;
+  
   width: 100%;
 }
 
 input {
+  position: fixed;
+  bottom: 10px;
+  left: 5px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   margin: 0;
   border: none;
-  border: 3px solid var(--mainOrange);
+  /* border: 3px solid var(--mainOrange); */
+  box-shadow: 0px 0px 2px rgb(184, 184, 184, 0.5);
   text-rendering: optimizeLegibility;
   transition: height .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   font-weight: bold;
   font-size: 1.3rem;
   cursor: pointer;
+  background: black;
+  color: white;
 }
 
 /* input::placeholder {
   color: black;
 } */
 
+input::placeholder {
+  color: inherit;
+}
+
 input:focus {
-  font-size: 1rem;
+  font-size: 13px;
   font-weight: normal;
   border-radius: 0%;
   width: 100%;
   outline: none;
   height: 40px;
-  transition: height .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: height .3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   color: inherit;
   border: none;
-  border-top: 5px solid var(--mainOrange);
+  border-top: 3px solid black;
+  bottom: 0px;
+  left: 0px;
+  background: white;
+  color: inherit;
 }
 
 .todo-gradient {
